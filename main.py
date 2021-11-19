@@ -1,16 +1,17 @@
 import sys
 import random
-from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.QtGui import QPainter, QColor, QPen
+from Uiter import Ui_MainWindow
+from PyQt5.QtGui import QPainter, QColor
 
 
 class First(QMainWindow):  # Экран приветсвия
     def __init__(self):  # иницилизация
-        super(QMainWindow, self).__init__()
-        uic.loadUi('Ui.ui', self)  # загрузка макета
+        super(First, self).__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
         self.flag = None
-        self.press.clicked.connect(self.flag_on)
+        self.ui.press.clicked.connect(self.flag_on)
 
     def flag_on(self):
         self.flag = True
@@ -32,4 +33,3 @@ if __name__ == '__main__':
     w = First()
     w.show()  # открываем начальное окно - приветсвия
     sys.exit(app.exec_())
-
