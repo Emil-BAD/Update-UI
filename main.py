@@ -20,7 +20,7 @@ class First(QMainWindow):  # Экран приветсвия
         if self.flag is True:
             qp = QPainter()
             qp.begin(self)
-            qp.setBrush(QColor(255, 255, 0))
+            qp.setBrush(QColor(random.randint(1, 255), random.randint(1, 255), random.randint(1, 255)))
             x = random.randint(5, 500)
             y = random.randint(5, 500)
             qp.drawEllipse(x, x, y, y)
